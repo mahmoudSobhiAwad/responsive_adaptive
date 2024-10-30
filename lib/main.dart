@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_adaptive/home.dart';
+import 'package:responsive_adaptive/views/dash_board_view.dart';
 
 
 void main (){
@@ -14,7 +14,7 @@ class FirstAPP extends StatelessWidget {
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      home: HomeScreen()
+      home: DashBoardView()
     );
   }
 }
