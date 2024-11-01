@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppStyle {
+  AppStyle({required BuildContext context});
   static const  regualr16=TextStyle(
     fontFamily:"Montserrat" ,
     fontSize: 16,
@@ -43,6 +44,7 @@ abstract class AppStyle {
     fontWeight: FontWeight.w400,
     color: Color(0xffAAAAAA),
   );
+  
    static const  semiBold18=TextStyle(
     fontFamily:"Montserrat" ,
     fontSize: 18,
