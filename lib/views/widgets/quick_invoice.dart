@@ -14,18 +14,18 @@ class QuickInvoice extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Quick Invoice",style: AppStyle.semiBold20,),
-            CircleAvatar(
+            Text("Quick Invoice",style: AppStyle.semiBold20(context),),
+            const CircleAvatar(
               backgroundColor: Color(0xffFAFAFA),
               child: IconButton(onPressed: null, icon: Icon(Icons.add,color: Color(0xff4EB7F2),)),
             ),
           ],
         ),
         const SizedBox(height: 24,),
-        const Text("Latest Transaction",style: AppStyle.meduim16,),
+        Text("Latest Transaction",style: AppStyle.medium16(context),),
         const SizedBox(height: 12,),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -41,16 +41,7 @@ class QuickInvoice extends StatelessWidget {
             ],
           ),
         ),
-        // SizedBox(
-        //   height: 80,
-        //   child: ListView.separated(
-        //     scrollDirection: Axis.horizontal,
-        //     itemBuilder: (context,index){
-        //     return IntrinsicWidth(
-        //       child: CustomUserInfo(model:UserInfoModel(imagePath: Assets.imagesAvatar1, name: "Madrani Andi ",email: "Madraniadi20@gma20@gma20@gmail")));
-          
-        //   }, separatorBuilder: (context,index)=>const SizedBox(width: 14,), itemCount: 3),
-        // )
+        
         const SizedBox(height: 24,),
         const Divider(
           height: 1,

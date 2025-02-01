@@ -12,18 +12,11 @@ class AllExpensiveList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children:[
-        ...List.generate(allExpenseItemList.length,(index)=>Expanded(child: Padding(
-          padding: index==1?const EdgeInsets.symmetric(horizontal: 12.0):EdgeInsets.zero,
-          child: GestureDetector(
-            onTap: (){
-              for(var item in allExpenseItemList){
-                item.picked=false;
-              }
-              allExpenseItemList[index].picked=true;
-              
-            },
-            child: AllExpenseItem(model: allExpenseItemList[index])),
-        ))),
+        AllExpenseItem(model: allExpenseItemList[0]),
+        const SizedBox(width: 8,),
+        AllExpenseItem(model: allExpenseItemList[1]),
+        const SizedBox(width: 8,),
+        AllExpenseItem(model: allExpenseItemList[2]),
       ],
     );
   }

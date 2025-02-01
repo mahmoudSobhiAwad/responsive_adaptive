@@ -14,7 +14,7 @@ class FormActionButton extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Text("Add more details",style: AppStyle.semiBold18.copyWith(color: const Color(0xff4EB7F2),)),
+            child: Text("Add more details",style: AppStyle.semiBold18(context).copyWith(color: const Color(0xff4EB7F2),)),
           ),
         ),
         const SizedBox(width: 24,),
@@ -25,7 +25,7 @@ class FormActionButton extends StatelessWidget {
               color: const Color(0xff4EB7F2),
               borderRadius: BorderRadius.circular(12),
             ),
-            child:const Center(child:  Text("Send Money",style: AppStyle.semiBold18,)),
+            child:Center(child:  Text("Send Money",style: AppStyle.semiBold18(context),)),
           ),
         ),
       ]

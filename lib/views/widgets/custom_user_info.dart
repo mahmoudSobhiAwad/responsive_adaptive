@@ -19,8 +19,8 @@ class CustomUserInfo extends StatelessWidget {
       ),
       child: ListTile(
        leading: SvgPicture.asset(model.imagePath),
-       title: Text(model.name,style: AppStyle.semiBold16,),
-       subtitle: Text(model.email??"",style: AppStyle.regular12,),
+       title: FittedBox(alignment: Alignment.topLeft,fit: BoxFit.scaleDown,child: Text(model.name,style: AppStyle.semiBold16(context),)),
+       subtitle: FittedBox(alignment: Alignment.centerLeft,fit: BoxFit.scaleDown,child: Text(model.email??"",style: AppStyle.regular12(context),)),
       ),
     );
   }

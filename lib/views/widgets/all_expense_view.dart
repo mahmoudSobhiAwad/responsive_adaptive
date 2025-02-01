@@ -7,22 +7,21 @@ class AllExpenseView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const AllExpensiveBody(),
-           const SizedBox(height: 20,),
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12)
-              ),
-              child: const QuickInvoice(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+         const AllExpensiveBody(),
+        const SizedBox(height: 20,),
+        Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12)
             ),
-        ],
-      ),
+            child: const QuickInvoice(),
+          ),
+          
+      ],
     );
   }
 }

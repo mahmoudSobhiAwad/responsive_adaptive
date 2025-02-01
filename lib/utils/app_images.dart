@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/card_shape.svg
   static const String imagesCardShape = "assets/images/card_shape.svg";
 
+  /// Assets for imagesCardShapePn
+  /// assets/images/card_shape_pn.png
+  static const String imagesCardShapePn = "assets/images/card_shape_pn.png";
+
   /// Assets for imagesDashboard
   /// assets/images/dashboard.svg
   static const String imagesDashboard = "assets/images/dashboard.svg";
