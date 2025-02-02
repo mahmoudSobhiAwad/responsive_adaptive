@@ -4,15 +4,25 @@ import 'package:responsive_adaptive/utils/app_images.dart';
 import 'package:responsive_adaptive/views/widgets/custom_drawer.dart';
 
 class FirstWidget extends StatelessWidget {
-  const FirstWidget({super.key});
+  const FirstWidget({
+    super.key,
+    required this.changeIndex,
+  });
+  final void Function(int) changeIndex;
   @override
   Widget build(BuildContext context) {
-    return  Container(
-       decoration: BoxDecoration(
+    return Container(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
       ),
-      child:CustomDrawer(model: UserInfoModel(email:"demo@gmail.com" ,name:"Lekan Okeowo" ,imagePath:Assets.imagesAvatar2),),
+      child: CustomDrawer(
+        model: UserInfoModel(
+            email: "demo@gmail.com",
+            name: "Lekan Okeowo",
+            imagePath: Assets.imagesAvatar2),
+        changeIndex: changeIndex,
+      ),
     );
   }
 }

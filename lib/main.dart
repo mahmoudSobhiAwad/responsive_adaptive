@@ -16,9 +16,28 @@ class FirstAPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.light,
-        home:  DashBoardView());
+    return MaterialApp(
+      initialRoute:
+          '/${RoutesNames.dashboard}', 
+      routes: {
+        '/${RoutesNames.dashboard}': (context) => const BasicView(
+              index: 0,
+            ),
+        '/${RoutesNames.transaction}': (context) => const BasicView(index: 1),
+        '/${RoutesNames.statistics}': (context) => const BasicView(index: 2),
+        '/${RoutesNames.wallet}': (context) => const BasicView(index: 3),
+        '/${RoutesNames.investment}': (context) => const BasicView(index: 4),
+      },
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+    );
   }
+}
+
+class RoutesNames {
+  static String dashboard = 'dashboard';
+  static String transaction = 'transaction';
+  static String statistics = 'statistics';
+  static String wallet = 'wallet';
+  static String investment = 'investment';
 }

@@ -9,3 +9,17 @@ List<UserInfoModel> userInfoModelList = [
   UserInfoModel(imagePath: Assets.imagesWallet, name: "Wallet Account"),
   UserInfoModel(imagePath: Assets.imagesInvestments, name: "My Investment"),
 ];
+List<String> months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];

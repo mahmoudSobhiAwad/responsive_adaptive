@@ -6,27 +6,35 @@ import 'package:responsive_adaptive/views/widgets/custom_drawer_item.dart';
 import 'package:responsive_adaptive/views/widgets/custom_user_info.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key,required this.model});
+  const CustomDrawer(
+      {super.key, required this.model, required this.changeIndex});
   final UserInfoModel model;
-
+  final void Function(int) changeIndex;
   @override
   Widget build(BuildContext context) {
-    return  CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
             child: CustomUserInfo(model: model),
           ),
         ),
-        const SliverToBoxAdapter(child:ActiveAndInActiveDrawerItems()),
+        SliverToBoxAdapter(
+            child: ActiveAndInActiveDrawerItems(
+          changeIndex: changeIndex,
+        )),
         SliverFillRemaining(
           hasScrollBody: false,
           child: Column(
             children: [
               const Spacer(),
-              CustomDrawerItem(model: UserInfoModel(imagePath: Assets.imagesSetting, name: "Setting System")),
-              CustomDrawerItem(model: UserInfoModel(imagePath: Assets.imagesLogout, name: "Logout Account")),
+              CustomDrawerItem(
+                  model: UserInfoModel(
+                      imagePath: Assets.imagesSetting, name: "Setting System")),
+              CustomDrawerItem(
+                  model: UserInfoModel(
+                      imagePath: Assets.imagesLogout, name: "Logout Account")),
             ],
           ),
         ),
@@ -34,4 +42,3 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 }
-

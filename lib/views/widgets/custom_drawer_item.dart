@@ -4,8 +4,10 @@ import 'package:responsive_adaptive/models/user_info_model.dart';
 import 'package:responsive_adaptive/utils/app_style.dart';
 
 class CustomDrawerItem extends StatelessWidget {
-  const CustomDrawerItem({super.key, required this.model});
+  const CustomDrawerItem({super.key, required this.model, this.height});
   final UserInfoModel model;
+  final double? height;
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -20,9 +22,14 @@ class CustomDrawerItem extends StatelessWidget {
                 : AppStyle.regualr16(context),
           )),
       trailing: model.picked
-          ? const VerticalDivider(
-              thickness: 3,
-              color: Color(0xff4EB7F2),
+          ? Container(
+              height: height,
+              width: 5,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(5), bottom: Radius.circular(5)),
+                color: Color(0xff4EB7F2),
+              ),
             )
           : null,
     );

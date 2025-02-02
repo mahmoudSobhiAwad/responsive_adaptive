@@ -6,9 +6,10 @@ import 'package:responsive_adaptive/views/widgets/tablet_layout/active_in_active
 import 'package:responsive_adaptive/views/widgets/tablet_layout/tablet_drawer_item.dart';
 
 class CustomDrawerTablet extends StatelessWidget {
-  const CustomDrawerTablet({super.key, required this.model});
+  const CustomDrawerTablet(
+      {super.key, required this.model, required this.changeIndex});
   final UserInfoModel model;
-
+  final void Function(int) changeIndex;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -18,13 +19,18 @@ class CustomDrawerTablet extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: SvgPicture.asset(model.imagePath)),
         ),
-        const SliverToBoxAdapter(child: ActiveAndInActiveDrawerTablet()),
+        SliverToBoxAdapter(
+            child: ActiveAndInActiveDrawerTablet(
+          changeIndex: changeIndex,
+        )),
         SliverFillRemaining(
           hasScrollBody: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               const Spacer(),
               CustomDrawerTabletItem(
                   model: UserInfoModel(

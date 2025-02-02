@@ -14,7 +14,7 @@ class _IncomChartState extends State<IncomChart> {
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: 1.7,
         child: PieChart(PieChartData(
             pieTouchData: PieTouchData(
                 enabled: true,
